@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "title": "O café estava gostoso ?",
+    "answers": [
+      {
+        "answer1": "Sim",
+        "answer2": "Não",
+        "answer3": "Pouco"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Você gostou do suco ?",
+    "answers": [
+      {
+        "answer1": "Sim",
+        "answer2": "Não",
+        "answer3": "Pouco"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Você gostou do biscoito ?",
+    "answers": [
+      {
+        "answer1": "Sim",
+        "answer2": "Não",
+        "answer3": "Pouco"
+      }
+    ]
+  }
+]
