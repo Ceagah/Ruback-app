@@ -6,11 +6,12 @@ interface ButtonProps {
   onPress: () => void;
   children?: React.ReactNode;
   backgroundColor?: string;
+  height?: number;
 }
 
 const Button = (props: ButtonProps) => {
   return (
-    <Container onPress={props.onPress} backgroundColor={props.backgroundColor}>
+    <Container onPress={props.onPress} backgroundColor={props.backgroundColor} height={props.height}>
       <Children>{props.children}</Children>
     </Container>
   );

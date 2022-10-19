@@ -1,15 +1,26 @@
 import React from "react";
 import { Text } from "react-native";
 import Data from "../../data/badAnswers/index.json";
-import { Container } from "./styles";
+import {
+  Container,
+  AnswerContainer,
+  AnswerTitle,
+  QuestionTitle,
+} from "./styles";
 
-const Questions = () => {
-  // Props tem que ser : title, answer1, answer2, e se tiver answer3, renderizar condicionalmente. Todas as respostas são botões que devem
-  // permanecer selecionados, e caso o usuário troque a resposta, ele deve ser deselecionado.
-  console.table(Data);
+interface DataProps {
+  title: string;
+  answers: any;
+}
+const Questions = (props: DataProps) => {
   return (
     <Container>
-      <Text> Perguntas </Text>
+      <QuestionTitle>{props.title}</QuestionTitle>
+      {props.answers.map((answer: React.Key | null | undefined) => (
+        <AnswerContainer key={answer}>
+          <AnswerTitle>{answer}</AnswerTitle>
+        </AnswerContainer>
+      ))}
     </Container>
   );
 };

@@ -4,7 +4,8 @@ import { colors } from "../../styles/themes";
 
 export const Container = styled.TouchableOpacity`
   width: 18%;
-  height: 100%;
+  height: ${(props : {height: number}) => 
+    props.height ? props.height : "100%" };
   border-radius: 100px;
   justify-content: center;
   color: ${(props: { color: string }) =>
