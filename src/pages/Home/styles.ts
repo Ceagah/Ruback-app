@@ -4,6 +4,8 @@ import { colors } from "../../styles/themes";
 
 export const Container = styled.SafeAreaView`
   flex: 1;
+  height: 100%;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -19,6 +21,7 @@ export const Content = styled.View`
 export const ImageContainer = styled.TouchableOpacity`
   width: 50%;
   height: 80%;
+  background: transparent;
 `;
 
 export const Image = styled.Image`
@@ -80,7 +83,7 @@ export const Button = styled.TouchableOpacity`
 
 export const Modal = styled.View`
   width: 100%;
-  height: 100%;
+  height: 200%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -90,20 +93,22 @@ export const Modal = styled.View`
 `;
 
 export const ModalContainer = styled.View`
-  width: 50%;
-  height: 50%;
+  width: 100%;
+  height: 100%;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  position: absolute;
+  background: ${colors.background};
 `;
 
 export const ModalText = styled.Text`
   color: ${colors.black};
   font-family: "Roboto";
-  font-size: ${ResponsiveSize(18)};
+  font-weight: bold;
+  font-size: ${ResponsiveSize(20)};
+  padding-top: 20%;
 `;
 ModalText.defaultProps = ModalText.defaultProps || {};
 ModalText.defaultProps.maxFontSizeMultiplier = 1.2;
@@ -117,12 +122,30 @@ export const ModalInput = styled.TextInput`
   border-color: ${colors.secondary};
   padding: 0 10px;
   margin-top: 10px;
+  font-size: ${ResponsiveSize(16)}
 `;
-export const ModalButton = styled.TouchableOpacity``;
+ModalInput.defaultProps = ModalInput.defaultProps || {};
+ModalInput.defaultProps.maxFontSizeMultiplier = 1.2;
+
+export const ModalButtonContainer = styled.View`
+  width: 100%;
+  height: 50px;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 20px;
+`;
+export const ModalButton = styled.TouchableOpacity`
+  background: ${(props: { backgroundColor: any; }) => props.backgroundColor ? props.backgroundColor : colors.primary};
+  width: 200px;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+`;
 export const ButtonText = styled.Text`
-  color: ${colors.black};
+  color: ${(props) => props.color ? props.color : colors.black};
   font-family: "Roboto";
-  font-size: ${ResponsiveSize(14)};
+  font-size: ${ResponsiveSize(16)};
+  font-weight: bold;
 `;
 ButtonText.defaultProps = ButtonText.defaultProps || {};
 ButtonText.defaultProps.maxFontSizeMultiplier = 1.2;

@@ -145,14 +145,16 @@ export const Modal = styled.View`
 `;
 
 export const ModalContainer = styled.View`
-  width: 50%;
-  height: 50%;
+  width: 60%;
+  height: 60%;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   position: absolute;
+  background: ${colors.background};
+  border-radius: 50px;
 `;
 
 export const ModalText = styled.Text`
@@ -173,9 +175,20 @@ export const ModalInput = styled.TextInput`
   padding: 0 10px;
   margin-top: 10px;
 `;
-export const ModalButton = styled.TouchableOpacity``;
+export const ModalButtonContainer = styled.View`
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+`;
+export const ModalButton = styled.TouchableOpacity`
+  width: 200px;
+  align-items: center;
+  border-radius: 20px;
+  background: ${(props: { backgroundColor: any; }) => props.backgroundColor ? props.backgroundColor : colors.primary};
+  margin-top: 20px;
+`;
 export const ModalButtonText = styled.Text`
-  color: ${colors.black};
+  color: ${colors.white};
   font-family: "Roboto";
   font-size: ${ResponsiveSize(14)};
 `;

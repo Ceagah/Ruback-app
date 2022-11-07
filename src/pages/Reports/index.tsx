@@ -28,6 +28,7 @@ import {
   ModalButtonText,
   ModalContainer,
   ModalButton,
+  ModalButtonContainer,
 } from "./styles";
 
 const Reports = () => {
@@ -102,7 +103,7 @@ const Reports = () => {
         <Modal>
           <ModalContainer>
             <ModalText>
-              Por favor digite a senha, para acessar o relatório:
+              Por favor digite a senha, para DELETAR o relatório:
             </ModalText>
             <ModalInput
               placeholder="Senha"
@@ -111,9 +112,17 @@ const Reports = () => {
               value={password}
               secureTextEntry
             />
-            <ModalButton onPress={() => ResetVotes()}>
-              <ModalButtonText>Acessar</ModalButtonText>
-            </ModalButton>
+            <ModalButtonContainer>
+              <ModalButton onPress={() => setIsModalOpen(!isModalOpen)} >
+                  <ButtonText color={colors.white}>
+                    Fechar
+                  </ButtonText>
+              </ModalButton>
+
+              <ModalButton onPress={() => ResetVotes()} backgroundColor={colors.red}>
+                <ModalButtonText>DELETAR</ModalButtonText>
+              </ModalButton>
+            </ModalButtonContainer>
           </ModalContainer>
         </Modal>
       )}

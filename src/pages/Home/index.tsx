@@ -21,7 +21,9 @@ import {
   ModalText,
   ModalInput,
   ModalContainer,
+  ModalButtonContainer,
   ModalButton,
+  ButtonText,
 } from "./styles";
 
 const Home = () => {
@@ -104,7 +106,7 @@ const Home = () => {
       "Obrigada !",
       "Sua opinião é muito importante para nós ! \n\n Obrigado por opinar!"
     );
-    navigation.navigate("GoodAnswers");
+    // navigation.navigate("GoodAnswers");
   };
 
   const handlePasswordEntry = () => {
@@ -143,9 +145,18 @@ const Home = () => {
                 value={password}
                 secureTextEntry
               />
-              <ModalButton onPress={() => handlePasswordEntry()}>
-                Acessar
-              </ModalButton>
+              <ModalButtonContainer>
+                <ModalButton onPress={() => handlePasswordEntry()}>
+                  <ButtonText>
+                    Acessar
+                  </ButtonText>
+                </ModalButton>
+                <ModalButton onPress={() => setIsModalOpen(!isModalOpen)} backgroundColor={colors.red}>
+                  <ButtonText color={colors.white}>
+                    Fechar
+                  </ButtonText>
+                </ModalButton>
+              </ModalButtonContainer>
             </ModalContainer>
           </Modal>
         )}
