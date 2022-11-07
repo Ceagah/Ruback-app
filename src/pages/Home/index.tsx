@@ -106,6 +106,7 @@ const Home = () => {
       "Obrigada !",
       "Sua opinião é muito importante para nós ! \n\n Obrigado por opinar!"
     );
+    navigation.navigate("GoodAnswers");
   };
 
   const handlePasswordEntry = () => {
